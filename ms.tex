@@ -27,6 +27,9 @@ H(\mathbf{p}; \mathbf{q}) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\right)
 
 \section{Testable Information}
 
+\section{A Special Case: Expected Values}\label{sec:expectations}
+Refer to Jaynes here...I don't want to present all the details.
+
 \section{Where does testable information come from?}
 
 Example about hearing ``sí/si'' as an answer to a question,
@@ -40,6 +43,7 @@ The joint prior is:
 	&	S	& \bar{S}\\
 \hline
 H_1 & 0.25  & 0.25\\
+\hline
 H_2 & 0.05 & 0.45\\
 \hline
 \end{array}
@@ -49,11 +53,36 @@ The marginal probabilities for $H_1$ and $H_2$ are both 0.5, and the
 marginal probabilities for $S$ and $\bar{S}$ are 0.3 and 0.7 respectively.
 
 
-\section{MaxEnt and Bayesian Inference}
+\section{MaxEnt and Bayesian Inference}\label{sec:bayes}
 
 \section{MaxEnt and Hierarchical Bayesian Models}
+Suppose we have a prior distribution $q(\mathbf{x})$ describing a state of
+knowledge about a vector of quantities $\mathbf{x}$. Consider some
+function of the unknowns, such as $f(\mathbf{x}) = \sum_{i=1}^N x_i$.
+If the value of $f$ is known, then our distribution for $\mathbf{x}$ can
+be updated as in Section~\ref{sec:bayes}. If we receive testable information
+about the expected value of $f$, then our distribution for $\mathbf{x}$ can
+be updated as in Section~\ref{sec:expectations}.
+
+In this section we'll look at a different kind of testable information that
+relates to $f$, but is not the expected value. What if we receive testable
+information about the marginal distribution for $f$?
+
+To keep things concrete, suppose all of the unknown parameters are positive,
+and our prior is an improper uniform distribution:
+
+\begin{eqnarray}
+q(\mathbf{x}) \propto
+\left\{
+\begin{array}{lr}
+1, & \forall x_i > 0\\
+0, & \textnormal{otherwise}.
+\end{array}
+\right.
+\end{eqnarray}
 
 \begin{thebibliography}{}
+Jaynes, E. T., 1979, `Where do we Stand on Maximum Entropy?' in The Maximum Entropy Formalism, R. D. Levine and M. Tribus (eds.), M. I. T. Press, Cambridge, MA, p. 15
 \end{thebibliography}
 
 \end{document}
