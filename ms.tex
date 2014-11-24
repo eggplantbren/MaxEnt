@@ -4,6 +4,7 @@
 \usepackage[left=2.5cm,top=2.5cm,right=2.5cm]{geometry}
 \usepackage{parskip}
 \usepackage{amsmath}
+\usepackage[utf8]{inputenc}
 
 \renewcommand{\topfraction}{0.85}
 \renewcommand{\textfraction}{0.1}
@@ -25,6 +26,28 @@ H(\mathbf{p}; \mathbf{q}) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\right)
 \end{eqnarray}
 
 \section{Testable Information}
+
+\section{Where does testable information come from?}
+
+Example about hearing ``sí/si'' as an answer to a question,
+and inferring the language (Spanish or French).
+
+The joint prior is:
+
+\begin{eqnarray}
+\begin{array}{|c|c|c|}
+\hline
+	&	S	& \bar{S}\\
+\hline
+H_1 & 0.25  & 0.25\\
+H_2 & 0.05 & 0.45\\
+\hline
+\end{array}
+\end{eqnarray}
+
+The marginal probabilities for $H_1$ and $H_2$ are both 0.5, and the
+marginal probabilities for $S$ and $\bar{S}$ are 0.3 and 0.7 respectively.
+
 
 \section{MaxEnt and Bayesian Inference}
 
