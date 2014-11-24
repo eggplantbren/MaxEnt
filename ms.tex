@@ -58,10 +58,10 @@ marginal probabilities for $S$ and $\bar{S}$ are 0.3 and 0.7 respectively.
 \section{MaxEnt and Hierarchical Bayesian Models}
 Suppose we have a prior distribution $q(\mathbf{x})$ describing a state of
 knowledge about a vector of quantities $\mathbf{x}$. Consider some
-function of the unknowns, such as $f(\mathbf{x}) = \sum_{i=1}^N x_i$.
-If the value of $f$ is known, then our distribution for $\mathbf{x}$ can
+function of the unknowns, such as $F=f(\mathbf{x}) = \sum_{i=1}^N x_i$.
+If the value of $F$ is known, then our distribution for $\mathbf{x}$ can
 be updated as in Section~\ref{sec:bayes}. If we receive testable information
-about the expected value of $f$, then our distribution for $\mathbf{x}$ can
+about the expected value of $F$, then our distribution for $\mathbf{x}$ can
 be updated as in Section~\ref{sec:expectations}.
 
 In this section we'll look at a different kind of testable information that
@@ -79,6 +79,12 @@ q(\mathbf{x}) \propto
 0, & \textnormal{otherwise}.
 \end{array}
 \right.
+\end{eqnarray}
+
+For any distribution $p(\mathbf{x})$, the marginal distribution for $F$ is:
+
+\begin{eqnarray}
+p(F) &=& \int \delta\left(F - f(\mathbf{x})\right)p(\mathbf{x}) \, d^n \mathbf{x}
 \end{eqnarray}
 
 \begin{thebibliography}{}
