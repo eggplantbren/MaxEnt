@@ -10,7 +10,7 @@
 \renewcommand{\textfraction}{0.1}
 
 \newcommand{\hyperparams}{\boldsymbol{\alpha}}
-\newcommand{\xx}{\mathbf{x}}
+\newcommand{\xx}{\boldsymbol{x}}
 
 \title{What is MaxEnt?}
 \author{Brendon J. Brewer}
@@ -22,7 +22,7 @@
 
 Relative entropy
 \begin{eqnarray}
-H(\mathbf{p}; \mathbf{q}) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\right) 
+H(\boldsymbol{p}; \boldsymbol{q}) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\right) 
 \end{eqnarray}
 
 \section{Testable Information}
@@ -56,12 +56,12 @@ marginal probabilities for $S$ and $\bar{S}$ are 0.3 and 0.7 respectively.
 \section{MaxEnt and Bayesian Inference}\label{sec:bayes}
 
 \section{MaxEnt and Hierarchical Bayesian Models}
-Suppose we have a prior distribution $q(\mathbf{x})$ describing a state of
-knowledge about a vector of quantities $\mathbf{x}$. Consider some
-function of the unknowns, such as $F=f(\mathbf{x}) = \sum_{i=1}^N x_i$.
-If the value of $F$ is known, then our distribution for $\mathbf{x}$ can
+Suppose we have a prior distribution $q(\boldsymbol{x})$ describing a state of
+knowledge about a vector of quantities $\boldsymbol{x}$. Consider some
+function of the unknowns, such as $F=f(\boldsymbol{x}) = \sum_{i=1}^N x_i$.
+If the value of $F$ is known, then our distribution for $\boldsymbol{x}$ can
 be updated as in Section~\ref{sec:bayes}. If we receive testable information
-about the expected value of $F$, then our distribution for $\mathbf{x}$ can
+about the expected value of $F$, then our distribution for $\boldsymbol{x}$ can
 be updated as in Section~\ref{sec:expectations}.
 
 In this section we'll look at a different kind of testable information that
@@ -72,7 +72,7 @@ To keep things concrete, suppose all of the unknown parameters are positive,
 and our prior is an improper uniform distribution:
 
 \begin{eqnarray}
-q(\mathbf{x}) \propto
+q(\boldsymbol{x}) \propto
 \left\{
 \begin{array}{lr}
 1, & \forall x_i > 0\\
@@ -81,10 +81,10 @@ q(\mathbf{x}) \propto
 \right.
 \end{eqnarray}
 
-For any distribution $p(\mathbf{x})$, the marginal distribution for $F$ is:
+For any distribution $p(\boldsymbol{x})$, the marginal distribution for $F$ is:
 
 \begin{eqnarray}
-p(F) &=& \int \delta\left(F - f(\mathbf{x})\right)p(\mathbf{x}) \, d^n \mathbf{x}
+p(F) &=& \int \delta\left(F - f(\boldsymbol{x})\right)p(\boldsymbol{x}) \, d^n \boldsymbol{x}
 \end{eqnarray}
 
 \begin{thebibliography}{}
