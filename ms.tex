@@ -4,6 +4,7 @@
 \usepackage[left=2.5cm,top=2.5cm,right=2.5cm]{geometry}
 \usepackage{parskip}
 \usepackage{amsmath}
+\usepackage{dsfont}
 \usepackage[utf8]{inputenc}
 
 \renewcommand{\topfraction}{0.85}
@@ -56,21 +57,20 @@ marginal probabilities for $S$ and $\bar{S}$ are 0.3 and 0.7 respectively.
 \section{MaxEnt and Bayesian Inference}\label{sec:bayes}
 
 \section{MaxEnt and Hierarchical Bayesian Models}
-Suppose we have a prior distribution $q(\boldsymbol{x})$ describing a state of
-knowledge about a vector of quantities $\boldsymbol{x}$. Consider some
-function of the unknowns, such as $F=f(\boldsymbol{x}) = \sum_{i=1}^N x_i$.
-If the value of $F$ is known, then our distribution for $\boldsymbol{x}$ can
+Suppose we have a discrete prior distribution $q(\xx)$. Consider some
+function of the unknown quantity, $f(\xx)$.
+If the value of $F$ is known, then our distribution for $\xx$ can
 be updated as in Section~\ref{sec:bayes}. If we receive testable information
-about the expected value of $F$, then our distribution for $\boldsymbol{x}$ can
+about the expected value of $F$, then our distribution for $\xx$ can
 be updated as in Section~\ref{sec:expectations}.
 
 In this section we'll look at a different kind of testable information that
-relates to $f$, but is not the expected value. What if we receive testable
-information about the marginal distribution for $f$?
+relates to $F$, but is not the expected value. What if we receive testable
+information about the marginal distribution for $F$?
 
-For any distribution $p(\boldsymbol{x})$, the marginal distribution for $F$ is:
+For any distribution $p(\xx)$, the marginal distribution for $F$ is:
 \begin{eqnarray}
-p(F) &=& \int \delta\left(F - f(\boldsymbol{x})\right)p(\boldsymbol{x}) \, d^n \boldsymbol{x}\label{eqn:constraint}
+p(F) &=& \sum_{\xx}\mathds{1}\left(f(\xx) = F\right)p(\xx)\label{eqn:constraint}
 \end{eqnarray}
 If $p(F)$ is a specified function, this is an infinite number of expected
 value constraints on $p(\xx)$. Therefore the probability distribution
