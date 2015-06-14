@@ -59,24 +59,27 @@ marginal probabilities for $S$ and $\bar{S}$ are 0.3 and 0.7 respectively.
 \section{MaxEnt and Hierarchical Bayesian Models}
 Suppose we have a discrete prior distribution $q(\xx)$. Consider some
 function of the unknown quantity, $f(\xx)$.
-If the value of $F$ is known, then our distribution for $\xx$ can
-be updated as in Section~\ref{sec:bayes}. If we receive testable information
+If the value of $f(\xx)$ is known, then our distribution for $\xx$ can
+be updated from $q$ to $p$ as in Section~\ref{sec:bayes}.
+If we receive testable information
 about the expected value of $F$, then our distribution for $\xx$ can
 be updated as in Section~\ref{sec:expectations}.
 
 In this section we'll look at a different kind of testable information that
 relates to $F$, but is not the expected value. What if we receive testable
-information about the marginal distribution for $F$?
-
+information that asserts the marginal distribution for $F$?
 For any distribution $p(\xx)$, the marginal distribution for $F$ is:
 \begin{eqnarray}
 p(F) &=& \sum_{\xx}\mathds{1}\left[f(\xx) = F\right]p(\xx)\label{eqn:constraint}
 \end{eqnarray}
 If $p(F)$ is a specified function, this is a large number of expected
 value constraints on $p(\xx)$, one for each element of the hypothesis space
-of possible $F$ values.
+of possible $F$ values. Clearly, the specified marginal $p(F)$ cannot assign
+non-zero probability to any possible $F$ values that have zero probability
+under $q(\xx)$.
 
-Therefore the probability distribution
+Since Equation~\ref{eqn:constraint} is really just a set of expectations,
+the probability distribution
 $p(\xx)$ with maximum entropy with respect to $q(\xx)$ that satisfies the
 constraint~\ref{eqn:constraint} is:
 \begin{eqnarray}
