@@ -13,7 +13,7 @@
 \newcommand{\hyperparams}{\boldsymbol{\alpha}}
 \newcommand{\xx}{\boldsymbol{x}}
 
-\title{What is MaxEnt?}
+\title{MaxEnt: What is it good for?}
 \author{Brendon J. Brewer}
 
 \begin{document}
@@ -23,21 +23,32 @@ The principle of maximum entropy (MaxEnt) is an idea in probability theory
 that is usually associated with \citet{jaynes}. The principle may be used
 to {\it assign} or {\it update} a
 subjective\footnote{in the sense that the probability distribution is a model
-of the state of uncertainty of an idealised rational agent.}
+of the state of uncertainty of an idealised rational agent, rather than
+a {\it frequency distribution} such as a histogram of people's heights.}
 probability distribution when you obtain a certain kind of information
-called {\it testable information}.
+called {\it testable information}. The principle is very intuitively compelling
+and there are some axiomatic arguments in its favour
+\citep[e.g.][]{2010arXiv1008.4831K}. However, MaxEnt has also been widely
+misapplied (even by some of its staunchest defenders), misunderstood,
+and poorly defended (even by Jaynes himself).
+
+
+
+
+
+
 
 Relative entropy
 \begin{eqnarray}
 H(\boldsymbol{p}; \boldsymbol{q}) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\right) 
 \end{eqnarray}
 
-\section{Testable Information}
+\section{What is testable information?}
 
-\section{A Special Case: Expected Values}\label{sec:expectations}
+\section{A special case: expected values}\label{sec:expectations}
 Refer to Jaynes here...I don't want to present all the details.
 
-\section{Where does testable information come from?}
+\section{Where is testable information in the real world?}
 
 Example about hearing ``sí/si'' as an answer to a question,
 and inferring the language (Spanish or French).
@@ -60,9 +71,9 @@ The marginal probabilities for $H_1$ and $H_2$ are both 0.5, and the
 marginal probabilities for $S$ and $\bar{S}$ are 0.3 and 0.7 respectively.
 
 
-\section{MaxEnt and Bayesian Inference}\label{sec:bayes}
+\section{MaxEnt and Bayesian inference}\label{sec:bayes}
 
-\section{MaxEnt and Hierarchical Bayesian Models}
+\section{MaxEnt and ``Hierarchical Bayesian'' models}
 Suppose we have a discrete prior distribution $q(\xx)$. Consider some
 function of the unknown quantity, $f(\xx)$.
 If the value of $f(\xx)$ is known, then our distribution for $\xx$ can
@@ -113,6 +124,10 @@ Inference and Maximum Entropy Methods in Science and Engineering 954,
 \bibitem[Jaynes(2003)]{jaynes} Jaynes, E. T., 2003, ``Probability Theory:
 The Logic of Science'', ed. G.~Larry~Bretthorst, Cambridge University Press
 
+\bibitem[Knuth and Skilling(2010)]{2010arXiv1008.4831K} Knuth, K.~H., 
+Skilling, J.\ 2010.\ Foundations of Inference.\
+Axioms 1.1 (2012): 38-73.\
+ArXiv e-prints arXiv:1008.4831. 
 \end{thebibliography}
 
 \end{document}
