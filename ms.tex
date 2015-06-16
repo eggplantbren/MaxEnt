@@ -40,15 +40,15 @@ make MaxEnt compelling, and propose some ideas about how it could be used in
 practice.
 
 We start with a {\it hypothesis space} of mutually exclusive and
-exhaustive propositions $A_1$, $A_2$, ..., $A_N$. One and only one of these
+exhaustive propositions $\{A_1, A_2, ..., A_N\}$. One and only one of these
 propositions is true, but we don't know which. We model states of
 uncertainty by probability distributions over the hypothesis space,
 such as $\{p_i\}_{i=1}^N$ where $P(A_i) = p_i$ is the probability of $A_i$.
 Of course all of the $p_i$ must be non-negative and their sum must be 1.
 From this probability distribution, various probabilities can be derived
 using the sum and product rules. For example, the probability of
-$A_4$ {\bf or} $A_5$ is $p_4 + p_5$, and the probability of $A_5$ given
-$A_5$ {\bf or} $A_6$ is $p_5/(p_5 + p_6)$. The rules of probability must
+($A_4$ {\bf or} $A_5$) is $p_4 + p_5$, and the probability of $A_5$ given
+($A_5$ {\bf or} $A_6$) is $p_5/(p_5 + p_6)$. The rules of probability must
 be obeyed if the rules for combining are to remain consistent
 with the symmetries of logical {\bf and} and {\bf or}
 \citep{2010arXiv1008.4831K}.
