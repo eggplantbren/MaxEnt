@@ -40,7 +40,9 @@ make MaxEnt compelling, and propose some ideas about how it could be used in
 practice.
 
 We start with a {\it hypothesis space} of mutually exclusive and
-exhaustive propositions $\{A_1, A_2, ..., A_N\}$. On the basis of background
+exhaustive propositions $\{A_1, A_2, ..., A_N\}$ which we will sometimes
+describe as possible values $\{x_1, x_2, ..., x_N\}$ of an unknown variable $x$.
+On the basis of background
 information $I$ (hereafter suppressed), we know that one and only one of these
 propositions is true, but we don't know which. We model states of
 uncertainty by probability distributions over the hypothesis space,
@@ -68,7 +70,19 @@ H(\boldsymbol{p}; \boldsymbol{q}) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\righ
 
 
 \section{A special case: expected values}\label{sec:expectations}
-Refer to Jaynes here...I don't want to present all the details.
+The most common kind of testable information analysed using MaxEnt is
+expected values. Updating from a prior $\boldsymbol{q}$ to a posterior
+$\boldsymbol{p}$ given an expected value constraint:
+
+\begin{eqnarray}
+\left<f(x)\right>_{\boldsymbol{p}} = \sum_{i=1}^N p_i f(x_i) = F.
+\end{eqnarray}
+
+The resulting posterior distribution given by MaxEnt is:
+
+\begin{eqnarray}
+p(x) &=& \frac{1}{Z}q(x)\exp\left[-\lambda f(x)\right] 
+\end{eqnarray}
 
 \section{Where is testable information in the real world?}
 
