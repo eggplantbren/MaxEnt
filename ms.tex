@@ -39,19 +39,24 @@ view of a Bayesian practitioner, discuss some of the properties that
 make MaxEnt compelling, and propose some ideas about how it could be used in
 practice.
 
+\section{Probability}
 We start with a {\it hypothesis space} of mutually exclusive and
-exhaustive propositions $\{A_1, A_2, ..., A_N\}$ which we will sometimes
-describe as possible values $\{x_1, x_2, ..., x_N\}$ of an unknown variable $x$.
+exhaustive propositions $\{A_1, A_2, ..., A_N\}$ which we will usually
+think of as possible values of an unknown quantity $x$.
 On the basis of background
 information $I$ (hereafter suppressed), we know that one and only one of these
-propositions is true, but we don't know which. We model states of
+propositions is true (i.e. the true value of $x$ is in our set),
+but we don't know which. We model states of
 uncertainty by probability distributions over the hypothesis space,
 such as $\{p_i\}_{i=1}^N$ where $P(A_i) = p_i$ is the probability of $A_i$.
+The standard loose Bayesian notation would write this distribution simply
+as $p(x)$.
+
 Of course all of the $p_i$ must be non-negative and their sum must be 1.
 From this probability distribution, various probabilities can be derived
 using the sum and product rules. For example, the probability of
 ($A_4$ {\bf or} $A_5$) is $p_4 + p_5$, and the probability of $A_5$ given
-($A_5$ {\bf or} $A_6$) is $p_5/(p_5 + p_6)$. The rules of probability must
+($A_5$ {\bf or} $A_8$) is $p_5/(p_5 + p_8)$. The rules of probability must
 be obeyed if the rules for combining are to remain consistent
 with the symmetries of logical {\bf and} and {\bf or}
 \citep{2010arXiv1008.4831K}.
@@ -66,7 +71,7 @@ with the symmetries of logical {\bf and} and {\bf or}
 
 Relative entropy
 \begin{eqnarray}
-H(\boldsymbol{p}; \boldsymbol{q}) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\right) 
+H(p; q) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\right) 
 \end{eqnarray}
 
 \section{What is testable information?}
