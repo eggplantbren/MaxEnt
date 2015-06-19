@@ -68,14 +68,14 @@ think of as possible values of an unknown quantity $x$. For example,
 $A_1 \equiv $``$x=1$'', $A_2 \equiv $``$x=2$'', and so on.
 On the basis of background
 information $I$ (hereafter suppressed), we know that one and only one of these
-propositions is true (i.e. the true value of $x$ is in our set),
+propositions is true (i.e. the true value of $x$ is in our hypothesis space),
 but we don't know which. We model states of
 uncertainty by probability distributions over the hypothesis space,
 such as $\{p_i\}_{i=1}^N$ where $P(A_i) = p_i$ is the probability of $A_i$.
-The standard loose Bayesian notation would write this distribution simply
+In the standard loose Bayesian notation we write this distribution simply
 as $p(x)$.
 
-Of course all of the $p_i$ must be non-negative and their sum must be 1.
+Of course, $p(x)$ must be non-negative and sum to 1.
 From this probability distribution, various probabilities can be derived
 using the sum and product rules. For example, the probability of
 ($A_4$ {\bf or} $A_5$) is $p_4 + p_5$, and the probability of $A_5$ given
@@ -95,6 +95,11 @@ The relative entropy of distribution $p$ from distribution $q$ is:
 \begin{eqnarray}
 H(p; q) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\right) 
 \end{eqnarray}
+Intuitively, $H$ measures how close the probability distribution $p$ is
+to the distribution $q$. The maximum possible value of $H$ is zero, if
+and only if $p$ happens to be the same as $q$.
+However, it is not symmetric and does not satisfy
+other properties of a distance.
 and we are to choose the distribution $p$ to maximise $H$ subject to the
 constraints of normalisation and any other constraints.
 
