@@ -124,7 +124,9 @@ and will be as close to $q$ as possible while doing so.
 
 \section{Special case 1: expected values}\label{sec:expectations}
 The most common kind of testable information analysed using MaxEnt is
-expected values. Updating from a prior $\boldsymbol{q}$ to a posterior
+expected values. 
+
+ Updating from a prior $\boldsymbol{q}$ to a posterior
 $\boldsymbol{p}$ given an expected value constraint:
 
 \begin{eqnarray}
@@ -136,6 +138,20 @@ The resulting posterior distribution given by MaxEnt is:
 \begin{eqnarray}
 p(x) &=& \frac{1}{Z}q(x)\exp\left[-\lambda f(x)\right] 
 \end{eqnarray}
+
+
+\subsection{The ``constraint rule'' controversy}
+Is it valid to use an experimental average (literally the arithmetic mean of
+some data) to set the expected value of a probability distribution? The
+assumption that this is okay has been termed {\it the constraint rule}.
+
+In many presentations of MaxEnt, it is assumed that this is not a problem
+({\bf cite people}). Other authors have noticed that it's possible to
+condition on the observed arithmetic mean, as one would do in a standard
+Bayesian analysis of that information, and that this can lead to a different
+answer from the constraint rule.
+
+
 
 
 \section{A special case: updating given propositions}
