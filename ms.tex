@@ -62,7 +62,9 @@ make MaxEnt compelling, and propose some ideas about how it could be used in
 practice.
 
 Throughout this article I will present, but not derive or prove, MaxEnt
-results for certain types of testable information.
+results for certain types of testable information. Some of these are well
+known (e.g. the expected value constraints discussed in
+Section~\ref{sec:expected_values}) while others are less so.
 
 \section{Probability}
 We start with a {\it hypothesis space} of mutually exclusive and
@@ -151,7 +153,8 @@ condition on the observed arithmetic mean, as one would do in a standard
 Bayesian analysis of that information, and that this can lead to a different
 answer from the constraint rule.
 
-
+This has led to the widespread (and in my view, incorrect) belief that
+MaxEnt and Bayesian inference are ``incompatible'', and the 
 
 
 \section{A special case: updating given propositions}
@@ -176,6 +179,17 @@ need to update to a new distribution $p(x)$ using MaxEnt.
 \caption{\label{fig:distribution2}}
 \end{center}
 \end{figure}
+
+\subsection{Skilling's criticism}
+Skilling thinks this is ``deriving Bayes again, when it's already there
+as the product rule''. I consider it more as a demonstration of which
+particular constraints are epistemically equivalent to learning the
+truth of a propositions. It turns out to be the rather obvious constraint
+that the probability we should assign to a proposition we know to be true
+is 1.
+
+I also think this viewpoint clarifies thinking about the ``probability
+distribution for the data'' (interpretation of sampling distributions etc).
 
 \section{MaxEnt with constraints on conditionals: the ``entropic prior''}
 
