@@ -61,6 +61,9 @@ view of a Bayesian practitioner, discuss some of the properties that
 make MaxEnt compelling, and propose some ideas about how it could be used in
 practice.
 
+Throughout this article I will present, but not derive or prove, MaxEnt
+results for certain types of testable information.
+
 \section{Probability}
 We start with a {\it hypothesis space} of mutually exclusive and
 exhaustive propositions $A_1$, $A_2$, ..., $A_N$ which we will usually
@@ -104,6 +107,35 @@ and we are to choose the distribution $p$ to maximise $H$ subject to the
 constraints of normalisation and any other constraints.
 
 \section{What is testable information?}
+{\it Testable information} refers to information given in the form of
+{\it a constraint that our probability distribution should satisfy}. This is
+different from the kind of information we normally use in Bayesian inference,
+which is the truth of a proposition. An example of testable information
+might be $P(x > 7) = 0.4$. That is, our probability distribution should have
+the property that there's a 40\% probability of $x$ being greater than 7.
+If our current (prior) probability distribution $q$ already has this property,
+then we needn't do anything. However, if $q$ does not satisfy this property,
+we use MaxEnt to choose a new distribution, the posterior $p$.
+
+The posterior $p$ will satisfy the constraint given in the testable information,
+and will be as close to $q$ as possible while doing so.
+
+
+
+\section{Special case 1: expected values}\label{sec:expectations}
+The most common kind of testable information analysed using MaxEnt is
+expected values. Updating from a prior $\boldsymbol{q}$ to a posterior
+$\boldsymbol{p}$ given an expected value constraint:
+
+\begin{eqnarray}
+\left<f(x)\right>_{\boldsymbol{p}} = \sum_{i=1}^N p_i f(x_i) = F.
+\end{eqnarray}
+
+The resulting posterior distribution given by MaxEnt is:
+
+\begin{eqnarray}
+p(x) &=& \frac{1}{Z}q(x)\exp\left[-\lambda f(x)\right] 
+\end{eqnarray}
 
 
 \section{A special case: updating given propositions}
@@ -129,48 +161,10 @@ need to update to a new distribution $p(x)$ using MaxEnt.
 \end{center}
 \end{figure}
 
-
-\section{A special case: expected values}\label{sec:expectations}
-The most common kind of testable information analysed using MaxEnt is
-expected values. Updating from a prior $\boldsymbol{q}$ to a posterior
-$\boldsymbol{p}$ given an expected value constraint:
-
-\begin{eqnarray}
-\left<f(x)\right>_{\boldsymbol{p}} = \sum_{i=1}^N p_i f(x_i) = F.
-\end{eqnarray}
-
-The resulting posterior distribution given by MaxEnt is:
-
-\begin{eqnarray}
-p(x) &=& \frac{1}{Z}q(x)\exp\left[-\lambda f(x)\right] 
-\end{eqnarray}
-
-\section{Where is testable information in the real world?}
-
-Example about hearing ``sí/si'' as an answer to a question,
-and inferring the language (Spanish or French).
-
-The joint prior is:
-
-\begin{eqnarray}
-\begin{array}{|c|c|c|}
-\hline
-	&	S	& \bar{S}\\
-\hline
-H_1 & 0.25  & 0.25\\
-\hline
-H_2 & 0.05 & 0.45\\
-\hline
-\end{array}
-\end{eqnarray}
-
-The marginal probabilities for $H_1$ and $H_2$ are both 0.5, and the
-marginal probabilities for $S$ and $\bar{S}$ are 0.3 and 0.7 respectively.
+\section{MaxEnt with constraints on conditionals: the ``entropic prior''}
 
 
-\section{MaxEnt and Bayesian inference}\label{sec:bayes}
-
-\section{MaxEnt and ``Hierarchical Bayesian'' models}
+\section{MaxEnt with constraints on marginals: ``hierarchical Bayes''}
 Suppose we have a discrete prior distribution $q(\xx)$. Consider some
 function of the unknown quantity, $f(\xx)$.
 If the value of $f(\xx)$ is known, then our distribution for $\xx$ can
@@ -200,6 +194,30 @@ constraint~\ref{eqn:constraint} is:
 p(\xx) &=& \frac{q(\xx)}{Z}\exp\left\{-\sum_F \lambda_F \mathds{1}
 \left[f(\xx) = F\right]  \right\}
 \end{eqnarray}
+
+
+\section{Where is testable information in the real world?}
+
+Example about hearing ``sí/si'' as an answer to a question,
+and inferring the language (Spanish or French).
+
+The joint prior is:
+
+\begin{eqnarray}
+\begin{array}{|c|c|c|}
+\hline
+	&	S	& \bar{S}\\
+\hline
+H_1 & 0.25  & 0.25\\
+\hline
+H_2 & 0.05 & 0.45\\
+\hline
+\end{array}
+\end{eqnarray}
+
+The marginal probabilities for $H_1$ and $H_2$ are both 0.5, and the
+marginal probabilities for $S$ and $\bar{S}$ are 0.3 and 0.7 respectively.
+
 
 
 \section*{Acknowledgements}
