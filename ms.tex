@@ -135,15 +135,20 @@ $p$ when we receive information that specifies an expected value.
 For example, suppose we apply the constraint (the testable information)
 that the expected value of $f(x)$ should equal some known value $F$. That is:
 \begin{eqnarray}
-\left<f(x)\right>_p = \sum_x p(x)f(x) = F.
+\left<f(x)\right>_p = \sum_x p(x)f(x) = F.\label{eq:expected_value}
 \end{eqnarray}
 
 The resulting posterior distribution given by MaxEnt is:
-
 \begin{eqnarray}
 p(x) &=& \frac{1}{Z}q(x)\exp\left[-\lambda f(x)\right] 
 \end{eqnarray}
+That is, the posterior is proportional to the prior multiplied by a
+``canonical'' factor. The value of $\lambda$ must be chosen so that
+the constraint (Equation~\ref{eq:expected_value}) is satisfied. $Z$ is the
+normalisation constant and implicitly depends on $\lambda$.
 
+As an example, let's update the prior from Figure~\ref{fig:distribution}
+using the testable information $\left<(x - 5)^2\right>_p = 1$.
 
 \subsection{The ``constraint rule'' controversy}
 Is it valid to use an experimental average (literally the arithmetic mean of
