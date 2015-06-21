@@ -129,13 +129,13 @@ and will be as close to $q$ as possible while doing so.
 
 \section{Special case 1: expected values}\label{sec:expectations}
 The most common kind of testable information analysed using MaxEnt is
-expected values. 
-
- Updating from a prior $\boldsymbol{q}$ to a posterior
-$\boldsymbol{p}$ given an expected value constraint:
-
+expected values. An expected value is a property of a probability distribution,
+and we can imagine updating from a prior $q$ to a posterior
+$p$ when we receive information that specifies an expected value.
+For example, suppose we apply the constraint (the testable information)
+that the expected value of $f(x)$ should equal some known value $F$. That is:
 \begin{eqnarray}
-\left<f(x)\right>_{\boldsymbol{p}} = \sum_{i=1}^N p_i f(x_i) = F.
+\left<f(x)\right>_p = \sum_x p(x)f(x) = F.
 \end{eqnarray}
 
 The resulting posterior distribution given by MaxEnt is:
