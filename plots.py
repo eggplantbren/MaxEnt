@@ -10,6 +10,9 @@ x = 1 + arange(0, 10)
 q = exp(0.5*randn(x.size))
 q /= q.sum()
 
+# Probability of x \in {3, 4, 5} according to distribution q
+print(sum(q[logical_and(x >= 3, x <= 5)]))
+
 bar(x-0.5*0.35, q, width=0.35, alpha=0.3)
 xlabel("$x$", fontsize=20)
 ylabel("Probability, $q(x)$")

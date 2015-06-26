@@ -183,11 +183,24 @@ where $D$ is a proposition about the value of $x$. For example, consider
 updating from the prior $q(x)$ shown in Figure~\ref{fig:distribution}, to
 a posterior $p(x)$, using the testable information
 \begin{eqnarray}
-P(3 \leq x \leq 5) = 1.
+P(3 \leq x \leq 5) = 1.\label{eq:prob_one}
 \end{eqnarray}
+Clearly, the distribution $q(x)$ doesn't satisfy this constraint. According
+to $q(x)$ the probability that $x$ is 3, 4, or 5 is 0.225, not 1.
+Therefore, we
+need to update to a new distribution $p(x)$ using MaxEnt. It may not be
+immediately obvious, but Equation~\ref{eq:prob_one} can be viewed as
+a constraint on an expected value:
+\begin{eqnarray}
+\left<
+\mathds{1}\left(3 \leq x \leq 5\right)
+\right>_p = 1.
+\end{eqnarray}
+where $\mathds{1}()$ is an indicator function which returns 1 where the
+argument is true and 0 where it is false. This allows us to use the
+result for expected value constraints, given in
+Section~\ref{sec:expectations}.
 
-Clearly, the distribution $q(x)$ doesn't satisfy this constraint, so we
-need to update to a new distribution $p(x)$ using MaxEnt.
 
 \begin{figure}
 \begin{center}
