@@ -164,11 +164,18 @@ shown in Figure~\ref{fig:distribution3}.
 \subsection{The ``constraint rule'' controversy}
 Is it valid to use an experimental average (literally the arithmetic mean of
 some data) to set the expected value of a probability distribution? The
-assumption that this is okay has been termed {\it the constraint rule}
-\citep{uffink}.
+assumption that this is okay has been termed {\it the constraint rule}, which
+has been discussed in depth by \citet{uffink}.
 
-In many presentations of MaxEnt, it is assumed that this is not a problem
-({\bf cite people}). Other authors have noticed that it's possible to
+In many presentations of MaxEnt, it is assumed that this is not a problem.
+For example, \citet{jaynes} often motivated MaxEnt using an example of a
+non-standard six-sided die, and we are asked to assign a probability
+distribution for the result of the next toss, using the information that the
+historical average of the tosses is 4.5 instead of the 3.5 one would
+usually expect.
+
+
+Other authors have noticed that it's possible to
 condition on the observed arithmetic mean, as one would do in a standard
 Bayesian analysis of that information, and that this can lead to a different
 answer from the constraint rule.
