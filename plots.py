@@ -10,6 +10,8 @@ x = 1 + arange(0, 9)
 q = exp(0.5*randn(x.size))
 q /= q.sum()
 
+print([round(qq, 3) for qq in q])
+
 # Probability of x \in {3, 4, 5} according to distribution q
 #print(sum(q[logical_and(x >= 3, x <= 5)]))
 

@@ -110,7 +110,15 @@ Throughout this paper, we will look at examples of MaxEnt updating from a prior
 $q(x)$ to a posterior $p(x)$ in different situations where the available
 information takes different forms. The prior distribution for all of the
 examples is a discrete prior over nine possible values of $x$, and is shown
-in Figure~\ref{fig:distribution}.
+in Figure~\ref{fig:distribution}. The nine prior probabilities are:
+
+\begin{eqnarray}
+\boldsymbol{q} = \{0.059, 0.167, 0.117, 0.048, 0.076, 0.231, 0.030, 0.082, 0.191\}.
+\end{eqnarray}
+
+The reason for choosing a ``ragged'' distribution is to avoid making any
+connection between MaxEnt and notions of smoothness or locality, since these
+do not actually play a role.
 
 \begin{figure}
 \begin{center}
