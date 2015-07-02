@@ -11,6 +11,7 @@ q = exp(0.5*randn(x.size))
 q /= q.sum()
 
 print([round(qq, 3) for qq in q])
+print(q[x >= 7].sum())
 
 # Probability of x \in {3, 4, 5} according to distribution q
 #print(sum(q[logical_and(x >= 3, x <= 5)]))
@@ -27,7 +28,7 @@ show()
 
 # Make a posterior
 p = q.copy()
-p[logical_or(x < 3, x > 5)] = 0.
+p[logical_or(x < 7, x > 9)] = 0.
 p /= p.sum()
 
 figure(figsize=(8, 10))
