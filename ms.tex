@@ -6,7 +6,9 @@
 \usepackage{amsmath}
 \usepackage{dsfont}
 \usepackage[utf8]{inputenc}
+\usepackage{color, colortbl}
 
+\definecolor{Gray}{gray}{0.5}
 \renewcommand{\topfraction}{0.85}
 \renewcommand{\textfraction}{0.1}
 
@@ -253,6 +255,31 @@ The prior probabilities can also be laid out in a grid:
 \hline
 \end{tabular}
 \end{center}
+
+Updating using MaxEnt, using the same constraint as before, is equivalent
+to ruling out the first two rows of this grid and maintaining the third.
+\begin{center}
+\begin{tabular}{|ccc|}
+\hline
+\rowcolor{Gray}
+0.059 & 0.167 & 0.117\\
+\rowcolor{Gray}
+0.048 & 0.076 & 0.231\\
+0.030 & 0.082 & 0.191\\
+\hline
+\end{tabular}
+$\Longrightarrow$
+\begin{tabular}{|ccc|}
+\hline
+0.000 & 0.000 & 0.000\\
+0.000 & 0.000 & 0.000\\
+0.099 & 0.270 & 0.630\\
+\hline
+\end{tabular}
+
+\end{center}
+
+
 
 \subsection{Skilling's criticism}
 Skilling thinks this is ``deriving Bayes again, when it's already there
