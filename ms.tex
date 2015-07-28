@@ -32,12 +32,19 @@ to actually arise in practical applications. I will attempt to define the
 situations in which MaxEnt could be practically useful.}
 
 \section{Introduction}
-The principle of maximum entropy (MaxEnt) is an idea in probability theory
-that is usually associated with \citet{jaynes}, although it has appeared in
+It is now well established that degrees of certainty can and should be modelled
+with probability theory. The resulting framework is usually called Bayesian
+inference, whose key feature is the updating of probabilities to incorporate
+new information when it is learned.
+
+The principle of maximum entropy (MaxEnt) is an idea that was developed...
+
+
+
+It is usually associated with \citet{jaynes}, although it has appeared in
 various guises in the work of others \citep[e.g.][]{gibbs, boltzmann, shannon}.
 
-The principle may be used
-to {\it assign} or {\it update} a
+MaxEnt can be used either to {\it assign} or to {\it update} a
 subjective\footnote{in the sense that the probability distribution is a model
 of the state of uncertainty of an idealised rational agent, rather than
 a {\it frequency distribution} such as a histogram of people's heights.}
@@ -50,11 +57,15 @@ hypothesis space, or a continuous one with respect to a specific choice of
 parameterisation, may be justified by a symmetry argument, or simply asserted
 as in the ``subjective Bayesian'' approach.}.
 
-The principle is very intuitively compelling
-and there are some axiomatic arguments in its favour
-\citep[e.g.][]{shore_johnson, 2006AIPC..872...31C, 2010arXiv1008.4831K}
-and counterexamples to alternatives \citep[e.g.][]{presse}.
-However, MaxEnt has also been widely
+There are some axiomatic arguments supporting MaxEnt
+\citep[e.g.][]{shore_johnson, 2006AIPC..872...31C, 2010arXiv1008.4831K},
+as well as counterexamples to possible alternatives \citep[e.g.][]{presse}.
+However, there is no consensus among Bayesians of the status of MaxEnt: is
+it a valid and potentially useful fundamental principle, some kind of an
+approximation or computational trick, or a dead end that is solely of
+historical interest?
+
+has also been widely
 misapplied (even by some of its staunchest defenders), misunderstood,
 and poorly defended (at times, even by Jaynes himself).
 Consequently, most modern Bayesians pay little attention to the principle,
