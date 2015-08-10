@@ -94,23 +94,23 @@ the canonical distribution.
 
 \section{Probability}
 We start with a {\it hypothesis space} of mutually exclusive and
-exhaustive propositions $A_1$, $A_2$, ..., $A_N$ which we will usually
+exhaustive propositions which we can (without loss of generality)
 think of as possible values of an unknown quantity $x$. For example,
-$A_1 \equiv $``$x=1$'', $A_2 \equiv $``$x=2$'', and so on.
+the propositions might be ``$x=1$'', ``$x=2$'', and so on.
 On the basis of background
 information $I$ (hereafter suppressed), we know that one and only one of these
 propositions is true (i.e. the true value of $x$ is in our hypothesis space),
 but we don't know which. We model states of
 uncertainty by probability distributions over the hypothesis space,
-such as $\{p_i\}_{i=1}^N$ where $P(A_i) = p_i$ is the probability of $A_i$.
+such as $\{p_i\}_{i=1}^N$ where $P(x=x_i) = p_i$.
 In the standard loose Bayesian notation we write this distribution simply
-as $p(x)$.
+as $p(x)$, the probability distribution for $x$.
 
 Of course, $p(x)$ must be non-negative and sum to 1.
 From this probability distribution, various probabilities can be derived
 using the sum and product rules. For example, the probability of
-($A_4$ {\bf or} $A_5$) is $p_4 + p_5$, and the probability of $A_5$ given
-($A_5$ {\bf or} $A_8$) is $p_5/(p_5 + p_8)$. The rules of probability must
+($x=4$ {\bf or} $x=5$) is $p_4 + p_5$, and the probability of $x=5$ given
+($x=5$ {\bf or} $x=8$) is $p_5/(p_5 + p_8)$. The rules of probability must
 be obeyed if the rules for combining are to remain consistent
 with the symmetries of logical {\bf and} and {\bf or}
 \citep{2010arXiv1008.4831K}.
