@@ -106,7 +106,8 @@ such as $\{p_i\}_{i=1}^N$ where $P(x=x_i) = p_i$.
 In the standard loose Bayesian notation we write this distribution simply
 as $p(x)$, the probability distribution for $x$.
 
-Of course, $p(x)$ must be non-negative and sum to 1.
+Of course, $p(x)$ must be non-negative and sum to 1 in order to be a valid
+probability distribution.
 From this probability distribution, various probabilities can be derived
 using the sum and product rules. For example, the probability of
 ($x=4$ {\bf or} $x=5$) is $p_4 + p_5$, and the probability of $x=5$ given
@@ -122,10 +123,8 @@ H(p; q) &=& -\sum_i p_i \log\left(\frac{p_i}{q_i}\right)
 Intuitively, $H$ measures how close the probability distribution $p$ is
 to the distribution $q$. The maximum possible value of $H$ is zero, if
 and only if $p$ happens to be the same as $q$.
-However, it is not symmetric and does not satisfy
+However, $H$ is not symmetric and does not satisfy
 other properties of a distance.
-and we are to choose the distribution $p$ to maximise $H$ subject to the
-constraints of normalisation and any other constraints.
 
 Throughout this paper, we will look at examples of MaxEnt updating from a prior
 $q(x)$ to a posterior $p(x)$ in different situations where the available
@@ -150,9 +149,11 @@ update to a posterior $p(x)$ given different kinds of testable information.
 \end{center}
 \end{figure}
 
+
 \section{What is testable information?}
 {\it Testable information} refers to information given in the form of
 {\it a constraint that our probability distribution should satisfy}. This is
+the kind of information MaxEnt uses, and is
 different from the kind of information we normally use in Bayesian inference,
 which is the truth of a proposition. An example of testable information
 might be $P(x > 7) = 0.4$. That is, our probability distribution should have
@@ -161,9 +162,12 @@ If our current (prior) probability distribution $q$ already has this property,
 then we needn't do anything. However, if $q$ does not satisfy this property,
 we use MaxEnt to choose a new distribution, the posterior $p$.
 
-The posterior $p$ will satisfy the constraint given in the testable information,
-and will be as close to $q$ as possible while doing so.
-
+The posterior $p$ must satisfy the constraint given in the testable information,
+and should be as close to $q$ as possible while doing so. The criterion for
+``closeness'' is the relative entropy $H(p; q)$:
+we should choose the distribution $p$ to maximise $H$ subject to the
+constraints of normalisation (i.e. $\sum_i q_i = 1$)
+and the testable information.
 
 
 \section{Special case 1: expected values}\label{sec:expectations}
