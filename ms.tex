@@ -39,8 +39,6 @@ new information when it is learned.
 
 The principle of maximum entropy (MaxEnt) is an idea that was developed...
 
-
-
 It is usually associated with \citet{jaynes}, although it has appeared in
 various guises in the work of others \citep[e.g.][]{gibbs, boltzmann, shannon}.
 
@@ -60,16 +58,23 @@ as in the ``subjective Bayesian'' approach.}.
 There are some axiomatic arguments supporting MaxEnt
 \citep[e.g.][]{shore_johnson, 2006AIPC..872...31C, 2010arXiv1008.4831K},
 as well as counterexamples to possible alternatives \citep[e.g.][]{presse}.
-However, there is no consensus among Bayesians of the status of MaxEnt: is
+However, there is no consensus among Bayesians about the status of MaxEnt. Is
 it a valid and potentially useful fundamental principle, some kind of an
-approximation or computational trick, or a dead end that is solely of
+approximation or computational trick, or a dead end that is only of
 historical interest?
 
 There are several possible reasons for the lack of consensus. 
+One is that the name ``MaxEnt'' has been used to refer not just to the principle
+for updating probability distributions, but also to a specific choice of
+regularisation term in optimisation-based methods for inverse problems
+\citep{}, among other things. Since Bayesian inference is
+a more principled way to deal with the uncertainty than regularised
+optimisation, this leads to the idea that Bayesian inference
+{\it supersedes} MaxEnt, and therefore that MaxEnt can be ignored.
 
-has also been widely
-misapplied (even by some of its staunchest defenders), misunderstood,
-and poorly defended (at times, even by Jaynes himself).
+In addition, many defences and explanations of MaxEnt in the literature
+are weak.
+
 Consequently, most modern Bayesians pay little attention to the principle,
 although there is a tendency among physicists, raised on \citet{jaynes},
 to invoke it as a justification
